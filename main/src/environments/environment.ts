@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  SMART_A_URL: 'http://localhost:3000',
-  SMART_B_URL: 'http://localhost:8080'
+  USERS_APP_URL: 'http://localhost:3000',
+  PRODUCTS_APP_URL: 'http://localhost:8080'
 };
 
 /*

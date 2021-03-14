@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProductViewComponent } from './product-view/product-view.component';
-import { ProductRoutingModule } from './product-routing.module';
+import { ProductsRoutingModule } from './products-routing.module';
 
 
 
@@ -9,7 +9,7 @@ import { ProductRoutingModule } from './product-routing.module';
   declarations: [ProductViewComponent],
   imports: [
     CommonModule,
-    ProductRoutingModule
+    ProductsRoutingModule
   ]
 })
-export class ProductModule { }
+export class ProductsModule { }
