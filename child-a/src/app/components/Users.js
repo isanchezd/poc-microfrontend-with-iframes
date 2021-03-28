@@ -1,26 +1,31 @@
 import React from "react";
-import UsersService from "./services/users.service";
+import UsersService from "../services/users.service";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./App.css";
+import "./Users.css";
 
-export default class App extends React.Component {
-  usersService;
+
+export default class Users extends React.Component {
 
   constructor() {
     super();
     this.state = { users: [] };
-    this.userService = new UsersService();
   }
 
   componentDidMount() {
-    this.userService.getUsers()
+    UsersService.getUsers()
     .then(users=> this.setState({ users }));
   }
 
   deleteUser(id) {
     const users = this.state.users.filter(user => user.id !== id);
-    this.setState({ users })
+    const userToDelete = this.state.users.find(user => user.id === id);
+    this.setState({ users });
+    window.parent.postMessage({
+      action: 'DELETED_USER',
+      user: userToDelete
+    }, '*');
   }
+
 
   renderUsersTable(users) {
     return users.map((user) => {

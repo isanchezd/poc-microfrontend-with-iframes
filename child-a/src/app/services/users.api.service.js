@@ -1,14 +1,16 @@
 
 const API_PATH = 'user';
 
-export default class UsersApiService {
-    getUsers() {
-        return fetch(`${process.env.REACT_APP_API_URL}${API_PATH}`, {
+const UsersApiService = {
+    async getUsers() {
+        const response = await fetch(`${process.env.REACT_APP_API_URL}${API_PATH}`, {
             method: 'GET',
             headers: {
-                'app-id': '605508972a2e4f35db3423de'
+                'app-id': process.env.REACT_APP_APP_ID
             }
-        })
-        .then(response => response.json())
+        });
+        return await response.json();
     }
 }
+
+export default UsersApiService;

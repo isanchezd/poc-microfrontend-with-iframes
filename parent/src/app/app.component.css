@@ -1,9 +1,14 @@
-.app-header {
+.header {
   width: 100%;
   height: auto;
   background-color: darkorange;
 }
 
-.app-title {
+.title {
   color: white;
 }
+
+.main {
+  min-height:600px;
+}
+

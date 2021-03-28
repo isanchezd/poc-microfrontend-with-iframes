@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { environment } from 'src/environments/environment';
 
@@ -8,7 +8,6 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./user-view.component.css']
 })
 export class UserViewComponent {
-
   public iframeUrl: SafeResourceUrl = '';
 
   constructor(private _sanitizer: DomSanitizer) {

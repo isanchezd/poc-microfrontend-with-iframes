@@ -1,17 +1,13 @@
 import UsersApiService from './users.api.service';
 
-export default class UsersService {
-
-    userApiService;
-
-    constructor() {
-        this.userApiService = new UsersApiService();
-    }
-
-    getUsers() {
-        return new Promise((resolve, reject) => {
-            this.userApiService.getUsers()
+const UsersService = {
+    async getUsers() {
+        const promise = new Promise((resolve, reject) => {
+            UsersApiService.getUsers()
             .then(response => resolve(response.data), reject);
-        })  
+        });
+        return await promise;
     }
 }
+
+export default UsersService;
